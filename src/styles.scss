@@ -4,6 +4,9 @@
 @use '~@angular/material' as mat;
 // Plus imports for other components in your app.
 
+// nueva Fuente Importada
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
@@ -25,7 +28,7 @@ $touristerDashboard-theme: mat.define-light-theme((
     primary: $touristerDashboard-primary,
     accent: $touristerDashboard-accent,
     warn: $touristerDashboard-warn,
-  )
+  ),
 ));
 
 // Include theme styles for core and each component used in your app.
@@ -56,4 +59,4 @@ $touristerDashboard-theme: mat.define-light-theme((
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Lato', sans-serif; }

@@ -1,24 +1,33 @@
-// mat-toolbar{
-//     height: 10%;
-//     display: flex;
-//     justify-content: space-around;
-// }
 
-a{
-    span{
-        font-size: 10px;
+mat-nav-list{
+    
+    a{
+        left: 10%;
+        height: 50%;
+        width: 80%;
+        border-radius: 10px;
+        font-family: 'Lato', sans-serif;
+        h6{
+            margin: 0;
+            margin-left: 15px;
+           
+           
+        }
+        mat-icon{
+            font-size: 14px;
+            // margin-left: 5%;
+            margin-top: 14%;
+        }
     }
-    mat-icon{
-        margin-top: 5px;
-        font-size: 18px;
-    }
 }
-.spacer-sidenav{
-    flex: 0.3 auto;
+a:hover{
+    color: rgb(28, 71, 245);
 }
-mat-toolbar{
-    display: flex;
-    justify-content: center;
-    height: 10%;
+.sub-header{
+    font-size: 10px;
 }
+
+
+
+
 

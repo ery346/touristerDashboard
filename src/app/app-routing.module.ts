@@ -16,6 +16,10 @@ const routes: Routes = [
     component: MainComponent,
     loadChildren: () => import('./pods/main/main.module').then(m => m.MainModule) 
   },
+  { 
+    path: '**', 
+    redirectTo: ''
+  },
 ];
 
 @NgModule({

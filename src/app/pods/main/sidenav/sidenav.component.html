@@ -1,5 +1,18 @@
-<mat-nav-list>
-  <a mat-list-item routerLink="home" >Home</a>
-  <a mat-list-item routerLink="cities" >Cities</a>
-  <a mat-list-item routerLink="users" >Users</a>
+<mat-nav-list >
+  <div class="sub-header" mat-subheader>Menu</div>
+  <mat-divider></mat-divider>
+  
+  <a mat-list-item  routerLink="home" >
+    <mat-icon  aria-hidden="false">home</mat-icon>
+    <h6>Home</h6>
+  </a>
+  <a mat-list-item routerLink="cities" >
+    <mat-icon aria-hidden="false">flag</mat-icon>
+    <h6>Cities</h6>
+  </a>
+  <a mat-list-item routerLink="users" >
+    <mat-icon aria-hidden="false">person</mat-icon>
+    <h6>Users</h6>
+  </a>
 </mat-nav-list>
+

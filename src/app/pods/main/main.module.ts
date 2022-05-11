@@ -9,12 +9,13 @@ import { ContainerComponent } from './container/container.component';
 import { MaterialComponentsModule } from '../../shared/material-components/material-components.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 
+
 @NgModule({
   declarations: [
     MainComponent,
     HeaderComponent,
     ContainerComponent,
-    SidenavComponent,
+    SidenavComponent
 
   ],
   imports: [

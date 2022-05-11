@@ -1,11 +1,22 @@
-// .header{
-//     height: 7%;
-//     width: 100vw;
-//     background: var(--primary-1);
-//     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-// }
+
 mat-toolbar{
+h1{
+  font-size: 17px;
+}
     height: 10%;
+    .flex{
+      display: flex;
+      justify-content: baseline;
+    }
+    .spacer{
+      flex: 1 1 auto;
+    }
+}
+mat-nav-list{
+  padding: 0;
+  a{
+    margin-left: 15px;
+  }
 }
   mat-icon{
     font-size: 15px;

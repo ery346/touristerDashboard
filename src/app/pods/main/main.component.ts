@@ -10,19 +10,14 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
   btnOpen: boolean = false;
   mobileQuery!: MediaQueryList;
-  private _mobileQueryListener: () => void;
   constructor(private changeDetectorRef: ChangeDetectorRef,private media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
   }
   ngOnInit(): void {
-   
   }
 
   statusSidebar(status: boolean){
     this.btnOpen = status;
-    console.log(this.btnOpen);
   }
 
 

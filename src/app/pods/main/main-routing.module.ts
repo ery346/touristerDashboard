@@ -11,8 +11,28 @@ const routes: Routes = [
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule) 
   },
   { 
+    path: 'user/:id', 
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule) 
+  },
+  { 
     path: 'cities', 
     loadChildren: () => import('./cities/cities.module').then(m => m.CitiesModule) 
+  },
+  { 
+    path: 'city/:id', 
+    loadChildren: () => import('./city/city.module').then(m => m.CityModule) 
+  },
+  { 
+    path: 'profile', 
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) 
+  },
+  { 
+    path: 'notifications', 
+    loadChildren: () => import('./notifications/notifications.module').then(m => m.NotificationsModule) 
+  },
+  { 
+    path: 'settings', 
+    loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) 
   },
 ];
 

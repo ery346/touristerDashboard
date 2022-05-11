@@ -1,20 +1,21 @@
 <!-- Header -->
   <app-header (open)="statusSidebar($event)"></app-header>
-
-  <mat-sidenav-container  [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+<!-- ... -->
+  <mat-sidenav-container  [style.marginTop.px]="mobileQuery.matches" >
 
 <!--Sidenav -->
-    <mat-sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [opened]="btnOpen" >
+    <mat-sidenav [mode]="mobileQuery.matches ? 'side' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" [fixedTopGap]="mobileQuery.matches ? 67 : 56" 
+                 [opened]="btnOpen" >
       <app-sidenav ></app-sidenav>
     </mat-sidenav>
-    
-<!-- Content -->
-    <mat-sidenav-content>
-      <app-container></app-container>
-      <mat-toolbar color="primary" class="footer">Footer</mat-toolbar>
-    </mat-sidenav-content>
+<!-- ... -->
 
+<!-- Content -->
+    <mat-sidenav-content >
+      <app-container></app-container>
+    </mat-sidenav-content>
+<!-- ... -->
   </mat-sidenav-container>
 
 
