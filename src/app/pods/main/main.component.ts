@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-main',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  btnOpen: boolean = false;
+  mobileQuery!: MediaQueryList;
+  private _mobileQueryListener: () => void;
+  constructor(private changeDetectorRef: ChangeDetectorRef,private media: MediaMatcher) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
   }
+  ngOnInit(): void {
+   
+  }
+
+  statusSidebar(status: boolean){
+    this.btnOpen = status;
+    console.log(this.btnOpen);
+  }
+
 
 }

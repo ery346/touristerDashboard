@@ -5,18 +5,22 @@ import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import { HeaderComponent } from './header/header.component';
 import { ContainerComponent } from './container/container.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+
+import { MaterialComponentsModule } from '../../shared/material-components/material-components.module';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     HeaderComponent,
     ContainerComponent,
-    SidebarComponent
+    SidenavComponent,
+
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    MaterialComponentsModule
   ]
 })
 export class MainModule { }

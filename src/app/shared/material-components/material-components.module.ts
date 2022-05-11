@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 
 //Angular Material Components
 
@@ -32,42 +30,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   declarations: [],
-  imports: [
-    MatInputModule,
-    MatAutocompleteModule,
-    MatDatepickerModule,
-    MatFormFieldModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatMenuModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatListModule,
-    MatGridListModule,
-    MatCardModule,
-    MatStepperModule,
-    MatTabsModule,
-    MatExpansionModule,
-    MatButtonToggleModule,
-    MatChipsModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
-    MatDialogModule,
-    MatTooltipModule,
-    MatSnackBarModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule
-
-  ],
   exports: [
+    MatDividerModule,
+    MatButtonModule,
     MatInputModule,
     MatAutocompleteModule,
     MatDatepickerModule,
