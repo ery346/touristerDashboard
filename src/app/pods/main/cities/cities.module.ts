@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { CitiesRoutingModule } from './cities-routing.module';
 import { CitiesComponent } from './cities.component';
+import { SharedModule } from '../../../shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    CitiesComponent
+    CitiesComponent,
+    
   ],
   imports: [
     CommonModule,
-    CitiesRoutingModule
+    CitiesRoutingModule,
+
+    SharedModule
   ]
 })
 export class CitiesModule { }

@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 80%;
+  }
+  
+  td, th {
+    width: 10%;
+  }
+
+  button{
+    left: 5%;
+  }
+
+  tr:hover{
+    background-color: rgb(232, 233, 233);
+    cursor: pointer;
+  }
+
+  mat-card{
+    height: 80vh;
+  }
+
+  .flex-spinner{
+    display: flex;
+    justify-content: center;
+  }

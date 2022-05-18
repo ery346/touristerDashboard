@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialComponentsModule } from './material-components/material-components.module';
+import { SearchTableComponent } from './components/search-table/search-table.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SearchTableComponent
+  ],
   imports: [
     CommonModule,
-    MaterialComponentsModule
+    MaterialComponentsModule,
+  ],
+  exports: [
+    MaterialComponentsModule,
+    SearchTableComponent
   ]
 })
 

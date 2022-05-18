@@ -4,8 +4,9 @@
   <mat-sidenav-container  [style.marginTop.px]="mobileQuery.matches" >
 
 <!--Sidenav -->
-    <mat-sidenav [mode]="mobileQuery.matches ? 'side' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" [fixedTopGap]="mobileQuery.matches ? 67 : 56" 
+    <mat-sidenav mode="side"
+                 [style.width.vh]="mobileQuery.matches ? 20 : 30"
+                 [fixedTopGap]="mobileQuery.matches ? 67 : 56" 
                  [opened]="btnOpen" >
       <app-sidenav ></app-sidenav>
     </mat-sidenav>

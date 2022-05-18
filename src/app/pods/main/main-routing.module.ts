@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   { 
     path: 'user/:id', 
-    loadChildren: () => import('./user/user.module').then(m => m.UserModule) 
+    loadChildren: () => import('./users/user/user.module').then(m => m.UserModule) 
   },
   { 
     path: 'cities', 
@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   { 
     path: 'city/:id', 
-    loadChildren: () => import('./city/city.module').then(m => m.CityModule) 
+    loadChildren: () => import('./cities/city/city.module').then(m => m.CityModule) 
   },
   { 
     path: 'profile', 

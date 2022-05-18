@@ -2,30 +2,27 @@
 mat-nav-list{
     
     a{
-        left: 10%;
+        left: 5%;
         height: 50%;
-        width: 80%;
+        width: 90%;
         border-radius: 10px;
         font-family: 'Lato', sans-serif;
-        h6{
-            margin: 0;
-            margin-left: 15px;
-           
-           
+        h5{
+            margin-left: 20%;
+
         }
         mat-icon{
-            font-size: 14px;
-            // margin-left: 5%;
-            margin-top: 14%;
+            margin-left: 15%;
+            font-size: 22px;
         }
     }
 }
 a:hover{
     color: rgb(28, 71, 245);
 }
-.sub-header{
-    font-size: 10px;
-}
+
+
+
 
 
 

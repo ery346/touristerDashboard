@@ -8,6 +8,8 @@ import { ContainerComponent } from './container/container.component';
 
 import { MaterialComponentsModule } from '../../shared/material-components/material-components.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { SearchTableComponent } from '../../shared/components/search-table/search-table.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -21,7 +23,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
   imports: [
     CommonModule,
     MainRoutingModule,
-    MaterialComponentsModule
+    SharedModule
   ]
 })
 export class MainModule { }

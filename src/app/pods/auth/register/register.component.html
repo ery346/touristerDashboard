@@ -1,1 +1,47 @@
-<p>register works!</p>
+<h3>Register</h3>
+<div class="content">
+  <form [formGroup]="form" (ngSubmit)="submit()" >
+
+    <br>
+    <mat-form-field class="example-full-width" appearance="standard">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" autocomplete="off" formControlName="name">
+      <mat-error *ngIf="validacion( 'nombre' )">
+        El nombre es <strong>requerido</strong>
+      </mat-error>
+    </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="standard">
+        <mat-label>Last name</mat-label>
+        <input matInput type="text" autocomplete="off" formControlName="lastname">
+        <mat-error *ngIf="validacion( 'apellido' )">
+          El apellido es <strong>requerido</strong>
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width" appearance="standard">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" autocomplete="off" formControlName="email">
+        <mat-error *ngIf="validacion( 'correo' )">
+          El formato email debe de ser <code>Ej.test@ejemplo.com</code>
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width" appearance="standard">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" autocomplete="off" formControlName="password" >
+        <mat-error *ngIf="validacion( 'contraseña' )">
+          Debe contener min <strong>10 caracteres</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="standard">
+        <mat-label>Confirm</mat-label>
+        <input matInput type="password" autocomplete="off" formControlName="confirm">
+        <mat-error *ngIf="validacion( 'confirmacionC' )">
+          La contraseña debe ser igual 
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" type="submit"  >Submit</button>
+  </form>
+  <span>Have already an account?</span> <a matList routerLink="/auth/login">Login Here</a>
+</div>

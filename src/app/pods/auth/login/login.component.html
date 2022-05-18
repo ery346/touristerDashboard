@@ -1,1 +1,21 @@
-<p>login works!</p>
+<h3>Log in</h3>
+<div class="content">
+
+  <form [formGroup]="form" (ngSubmit)="login()" >
+    <mat-form-field  appearance="standard"  >
+        <mat-label>Email</mat-label>
+        <input matInput type="email"  autocomplete="off" formControlName="email">
+        <mat-error>Invalid email</mat-error>
+    </mat-form-field>
+      <mat-form-field id="date" appearance="standard">
+        <mat-label>Pass</mat-label>
+        <input matInput type="password" autocomplete="off" formControlName="password">
+        <mat-error>Must be a minimum of 8 characters</mat-error>
+    </mat-form-field>
+    <p>
+        <button mat-raised-button type="submit"  color="primary">Login</button>
+    </p>
+      
+</form>
+    <span>No account?</span> <a matList routerLink="/auth/register">Register Here</a>
+</div>
