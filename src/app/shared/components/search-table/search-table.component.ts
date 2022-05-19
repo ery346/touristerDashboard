@@ -5,13 +5,28 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CitiesService } from '../../services/cities.service';
 import { UsersService } from '../../services/users.service';
+const arr = [
+  {name: 'San Diego', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '1'},
+  {name: 'Sanfgh', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '2'},
+  {name: 'hghghfgh', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '3'},
+  {name: 'San Diego', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '4'},
+  {name: 'San Diego', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '5'},
+  {name: 'San Diego', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '6'},
+  {name: 'San Diego', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '7'},
+  {name: 'San Diego', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '8'},
+  {name: 'kikikik', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '9'},
+  {name: 'San Diego', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '1'},
+  {name: 'San Diego', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '1'},
+  {name: 'San Diego', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '1'},
+  {name: 'San Diego', timezone: 'America/Los_angeles', updated_at: '2021-05-14T15:23:31.334Z', created_at: '2021-05-14T15:23:41.144Z', id: '1'},
 
+]
 @Component({
   selector: 'app-search-table',
   templateUrl: './search-table.component.html',
   styleUrls: ['./search-table.component.scss']
 })
-export class SearchTableComponent implements OnInit, OnChanges {
+export class SearchTableComponent implements OnInit, OnChanges  {
   @Input()newType!: string;
   @Input()serviceData!: any;
   data:any[] = []
@@ -19,8 +34,11 @@ export class SearchTableComponent implements OnInit, OnChanges {
   dataSource!: MatTableDataSource<any>;
   setSpinner: boolean = true;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  length = 100;
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
+  @ViewChild(MatSort,  {static: true}) sort!: MatSort;
 
   constructor(private citiesS: CitiesService, private usersS: UsersService, private router: Router) {
   }
@@ -38,7 +56,7 @@ export class SearchTableComponent implements OnInit, OnChanges {
     //        this.setSpinner = false;
     //       });
       
-    //       this.dataSource = new MatTableDataSource(this.data);
+    //       this.dataSource = new MatTableDataSource(arr);
     //       this.displayedColumns = ['id', 'name', 'timezone', 'created_at', 'updated_at'];
     //       this.dataSource.paginator = this.paginator;
     //       this.dataSource.sort = this.sort;
@@ -82,9 +100,10 @@ export class SearchTableComponent implements OnInit, OnChanges {
       
           this.dataSource = new MatTableDataSource(this.data);
           this.displayedColumns = ['id', 'name', 'timezone', 'created_at', 'updated_at'];
+           this.dataSource.sort = this.sort;
           this.dataSource.paginator = this.paginator;
-          this.dataSource.sort = this.sort;
         })
+     
         break;
     
         case 'User':
@@ -95,6 +114,7 @@ export class SearchTableComponent implements OnInit, OnChanges {
         break;
     }
   }
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

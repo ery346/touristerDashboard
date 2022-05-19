@@ -17,6 +17,12 @@ mat-nav-list{
         }
     }
 }
+.flex{
+    display: flex;
+    justify-content: center;
+    margin-top: 40%;
+}
+
 a:hover{
     color: rgb(28, 71, 245);
 }

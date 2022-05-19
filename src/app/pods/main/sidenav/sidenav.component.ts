@@ -1,5 +1,6 @@
-import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
+import { LoginBtnService } from 'src/app/shared/services/login-btn.service';
 
 
 @Component({
@@ -9,12 +10,15 @@ import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '
 })
 export class SidenavComponent implements OnInit {
 
-  constructor() {
+  constructor(private loginB: LoginBtnService) {
 
   }
   ngOnInit(): void {
   
   }
 
+  login(){
+    this.loginB.login(true);
+  }
  
 }

@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
+import { AuthModule } from '@auth0/auth0-angular';
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +17,14 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
+    AuthModule.forRoot({
+      domain: 'dev-a7batbhm.us.auth0.com',
+      clientId: '4UV0jyXuBnsNhxOrAly9wvKw1u3h62w9',
+      cacheLocation: 'localstorage',
+      useRefreshTokens: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
