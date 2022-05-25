@@ -38,10 +38,14 @@ $touristerDashboard-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Lato', sans-serif; }
+
 /* estilo del scroll */
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
 }
 /* Track */
 ::-webkit-scrollbar-track {
@@ -58,5 +62,7 @@ $touristerDashboard-theme: mat.define-light-theme((
   background: #888;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Lato', sans-serif; }
+.card-container{
+  height: 80vh;
+  overflow: auto;
+}

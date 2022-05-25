@@ -1,22 +1,37 @@
 <mat-toolbar class="flex"  color="primary" >
   <button mat-icon-button (click)="openSidebar()" >
-    <mat-icon>menu</mat-icon>
+    <mat-icon >menu</mat-icon>
   </button>
   <h1>Tourister App</h1>
   <span class="spacer"></span>
   
   <mat-nav-list>
 
-    <a routerLink="profile">
-      <mat-icon >account_circle</mat-icon>
-    </a>
+    <ng-container  *ngIf="imgProfile else icon">
+     <a routerLink="profile">
+      <img [src]="imgProfile" alt="">
+     </a>
+    </ng-container>
+    <ng-template #icon>
+      <a routerLink="profile">
+        <mat-icon >account_circle</mat-icon>
+      </a>
+    </ng-template>
+    
     <a routerLink="notifications">
       <mat-icon matBadge="15" matBadgeColor="warn" matBadgeSize="small" >notifications</mat-icon>
     </a>
     <a routerLink="settings">
       <mat-icon>settings</mat-icon>
     </a>
+
   </mat-nav-list>
+  <div *ngIf="!hasAuthentication">
+    <button mat-raised-button (click)="login()">Login</button>
+  </div>
+ <div *ngIf="hasAuthentication">
+  <button mat-raised-button (click)="logout()">Logout</button>
+ </div>
 </mat-toolbar>
 
 

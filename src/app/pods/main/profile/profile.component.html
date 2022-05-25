@@ -1,1 +1,11 @@
-<p>profile works!</p>
+<mat-card class="card-container">
+    <ng-container *ngFor="let data of profileArr">
+        <img class="avatar" [src]="data.picture" alt="">
+        <div class="nickname">{{data.name}}</div>
+        <div class="nickname">{{data.nickname}}</div>
+        <div class="email">{{data.email}}</div>
+        <div class="updated">{{data.updated_at}}</div>
+    </ng-container>
+  
+</mat-card>
+

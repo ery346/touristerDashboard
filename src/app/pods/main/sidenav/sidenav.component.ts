@@ -1,6 +1,4 @@
-
 import { Component, OnInit } from '@angular/core';
-import { LoginBtnService } from 'src/app/shared/services/login-btn.service';
 
 
 @Component({
@@ -10,15 +8,12 @@ import { LoginBtnService } from 'src/app/shared/services/login-btn.service';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor(private loginB: LoginBtnService) {
-
+  constructor() {
   }
   ngOnInit(): void {
   
   }
 
-  login(){
-    this.loginB.login(true);
-  }
+
  
 }

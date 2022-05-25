@@ -9,14 +9,11 @@ import { CitiesService } from '../../../shared/services/cities.service';
 
 export class CitiesComponent implements OnInit {
   data:any;
+  tableCols:any = ['id', 'name', 'timezone', 'created_at', 'updated_at']
   constructor(private citiesS: CitiesService) { }
 
   ngOnInit(): void {
-    this.citiesS.getCities().subscribe((res:any) =>{
-      this.data = res;
-
-      
-    })
+    this.citiesS.getCities().subscribe((res:any) => console.log(this.data = res) )
   }
 
 }

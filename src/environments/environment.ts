@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlLink: 'https://closeapptesting.herokuapp.com'
+  apiUrl: 'https://closeapptesting.herokuapp.com/api'
 };
 
 /*

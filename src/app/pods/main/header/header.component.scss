@@ -2,16 +2,28 @@
  .spacer{
   flex: 1 1 auto;
 }
-.flex{
-  display: flex;
-  justify-content: baseline;
-}
+// .flex{
+//   display: flex;
+//   justify-content: baseline;
+// }
 mat-nav-list{
   padding: 0;
+  margin-right: 5%;
   a{
-    margin-left: 40px;
+    margin-left: 50px;
+  }
+  mat-icon{
+    margin-top: 10px;
+  }
+
+  div{
+   margin-left: 3%;
+  }
+
+  img{
+    // margin-top: 10px;
+    width: 26px;
+    border-radius: 50%;
   }
 }
-  mat-icon{
-    font-size: 20px;
-  }
+
