@@ -14,17 +14,8 @@ export class HeaderComponent implements OnInit, DoCheck {
   imgProfile: string = '';
   @Output()openSidenav = new EventEmitter<boolean>();
   constructor(private auth: AuthService, 
-              @Inject(DOCUMENT) private doc: Document,
               private loginB: LoginBtnService) { }
   ngDoCheck(): void {
-    this.auth.isAuthenticated$.subscribe((res:any) => {
-      // if(res){
-      //   this.hasAuthentication = true;
-      // }else{
-      //   this.hasAuthentication = false;
-      // }
-      this.hasAuthentication = res;
-    }) 
   
   }
 
@@ -41,11 +32,9 @@ export class HeaderComponent implements OnInit, DoCheck {
     this.openSidenav.emit(this.testBool);
   }
 
-  login(){
-    this.loginB.login(true)
-  }
+  // login(){
+  //   this.loginB.login(true)
+  // }
 
-  logout(){
-    this.auth.logout({returnTo: this.doc.location.origin})
-  }
+ 
 }

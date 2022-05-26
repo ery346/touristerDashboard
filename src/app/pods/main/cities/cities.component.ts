@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '@auth0/auth0-angular';
 import { CitiesService } from '../../../shared/services/cities.service';
 
 @Component({
@@ -10,10 +12,35 @@ import { CitiesService } from '../../../shared/services/cities.service';
 export class CitiesComponent implements OnInit {
   data:any;
   tableCols:any = ['id', 'name', 'timezone', 'created_at', 'updated_at']
-  constructor(private citiesS: CitiesService) { }
+  myForm: FormGroup = this.fb.group({
+    name: ['', [Validators.required]],
+    timezone: ['', [Validators.required]]
+  })
+  constructor(private citiesService: CitiesService, private authService: AuthService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.citiesS.getCities().subscribe((res:any) => console.log(this.data = res) )
+     this.authService.getIdTokenClaims().subscribe((res:any) => {
+      let idToken;
+      idToken = res.__raw
+      
+      this.citiesService.getAdminCities(idToken).subscribe((res:any) =>  this.data = res );
+
+    })
   }
+
+  createCity(){
+    console.log(this.myForm.valid);
+    
+  }
+  // asd(){
+  //   const city = {
+  //     id: 0,
+  //     name: "string",
+  //     timezone: "string",
+  //     created_at: "string",
+  //     updated_at: "string"
+  //   }
+  //   this.citiesService.postAdminCities(city)
+  // }
 
 }

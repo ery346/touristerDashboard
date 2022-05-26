@@ -25,4 +25,9 @@ table {
   .flex-spinner{
     display: flex;
     justify-content: center;
+    align-items: center;
+    mat-spinner {
+      margin-top: 23%;
+      // margin-bottom: 19.5%;
+    }
   }

@@ -1,3 +1,14 @@
 .avatar{
+    width: 15%;
     border-radius: 50%;
+    // float: left;
+    margin: 2%;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+}
+mat-grid-list{
+    // width: 80%;
+    margin-left: 22%;
 }

@@ -26,7 +26,7 @@ export class LoginBtnService {
       this.valueLogin = value;
       setTimeout(() => {
         this.valueLogin = false;
-      }, 500);
+      }, 100);
     }
   }
 

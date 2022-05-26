@@ -12,8 +12,10 @@ export class AuthComponent implements OnInit {
   constructor(private auth: AuthService, private loginB: LoginBtnService) { }
 
   ngOnInit(): void {
-    // this.loginB.login(true);
-        this.auth.loginWithRedirect();
+        // this.auth.loginWithRedirect();
   }
 
+  login(){
+    this.loginB.login(true)
+  }
 }
