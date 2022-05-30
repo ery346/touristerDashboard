@@ -24,11 +24,11 @@ export class UsersService {
   //   )
   // }
 
-  getAdminProvider(idToken: string){
+  getAdminProviders(idToken: string){
     let headers = new HttpHeaders();  
     this.headers = headers.set('Content-Type', 'application/json').set('Authorization', `Bearer ${idToken}` )
  
-    return this.http.get(`${environment.apiUrl}/v1/dashboard/customers`, {
+    return this.http.get(`${environment.apiUrl}/v1/dashboard/providers`, {
       headers: this.headers,
     })
     .pipe(

@@ -22,9 +22,7 @@ export class CitiesComponent implements OnInit {
      this.authService.getIdTokenClaims().subscribe((res:any) => {
       let idToken;
       idToken = res.__raw
-      
       this.citiesService.getAdminCities(idToken).subscribe((res:any) =>  this.data = res );
-
     })
   }
 
@@ -32,15 +30,6 @@ export class CitiesComponent implements OnInit {
     console.log(this.myForm.valid);
     
   }
-  // asd(){
-  //   const city = {
-  //     id: 0,
-  //     name: "string",
-  //     timezone: "string",
-  //     created_at: "string",
-  //     updated_at: "string"
-  //   }
-  //   this.citiesService.postAdminCities(city)
-  // }
+
 
 }

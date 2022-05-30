@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './pods/auth/auth.component';
 import { MainComponent } from './pods/main/main.component';
 import { IsLogedGuard } from './shared/guards/is-loged.guard';
+import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard';
 
 const routes: Routes = [
   { 
@@ -12,7 +13,7 @@ const routes: Routes = [
   },
   { 
     path: '', 
-    canActivate: [IsLogedGuard],
+    canActivate: [IsLoggedInGuard],
     component: MainComponent,
     loadChildren: () => import('./pods/main/main.module').then(m => m.MainModule) 
   },

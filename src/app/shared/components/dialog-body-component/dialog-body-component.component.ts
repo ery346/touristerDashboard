@@ -20,16 +20,31 @@ export class DialogBodyComponentComponent implements OnInit {
   updateNow:any = Date.now();
   timezones:any[] = []
 
-  constructor(private fb: FormBuilder, private timezoneService: timezoneService, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private fb: FormBuilder, 
+              private timezoneService: timezoneService, 
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
     this.timezones = this.timezoneService.timezones
     
   }
 
-  create(){
-    this.myForm.value.id = Date.now();
-    console.log(this.myForm.value);
+  action(actionBtn: string){
+    switch (actionBtn) {
+      case 'Create':
+        console.log('Crear nueva ciudad');
+        
+        break;
+      case 'Edit':
+        console.log('Editar ciudad', 'id: ', this.data.id);
+        
+        break;
+    
+      default:
+        break;
+    }
+    // this.myForm.value.id = Date.now();
+    // console.log(this.myForm.value);
     // this.cityService.postAdminCities(this.myForm.value)
 
     

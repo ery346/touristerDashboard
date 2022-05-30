@@ -1,46 +1,43 @@
-<mat-card-header>  <h1>{{data.title}}</h1></mat-card-header>
+<h1>{{data.title}}</h1>
+<mat-divider></mat-divider>
 <br>
-<mat-dialog-content>
-    <form [formGroup]="myForm" >
-        <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput formControlName="name">
-        </mat-form-field>
+<form [formGroup]="myForm" >
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Timezone</mat-label>
-          <mat-select >
-              <mat-option *ngFor="let food of timezones" [value]="food.value">
-              {{food.viewValue}}
-              </mat-option>
-          </mat-select>
-        </mat-form-field>
-          
-        <mat-form-field appearance="outline">
-            <mat-label>Created</mat-label>
-            <input matInput [matDatepicker]="picker1" [formControl]="date">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field>
-    
-        
-        <p>
-            <mat-form-field appearance="outline">
-                <mat-label>Last Update</mat-label>
-                <input matInput disabled [value]="updateNow | date:'shortDate'">
-            </mat-form-field> 
-        </p>
+    <mat-form-field appearance="outline">
+      <mat-label>Timezone</mat-label>
+      <mat-select >
+          <mat-option *ngFor="let food of timezones" [value]="food.value">
+          {{food.viewValue}}
+          </mat-option>
+      </mat-select>
+    </mat-form-field>
       
-    </form>
-</mat-dialog-content>
+   <p>
+    <mat-form-field appearance="outline">
+        <mat-label>Created</mat-label>
+        <input matInput [matDatepicker]="picker1" [formControl]="date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+   </p>
 
-<ng-container *ngIf="data.deleteButton">
-    <button mat-stroked-button id="deleteBtn" (click)="create()" [mat-dialog-close]="true" color="warn" ><mat-icon>delete</mat-icon></button>
-</ng-container>
-<div mat-dialog-actions style="float:right;margin:20px;">
-    <button mat-stroked-button (click)="create()" [mat-dialog-close]="true" color="warn" >Cancel</button>
-    <button mat-raised-button (click)="create()" [mat-dialog-close]="true" color="primary">{{data.actionButton}}</button>
+    <mat-form-field appearance="outline">
+        <mat-label>Last Update</mat-label>
+        <input matInput disabled [value]="updateNow | date:'shortDate'">
+    </mat-form-field> 
+
+  
+</form>
+<mat-divider></mat-divider>
+
+<div mat-dialog-actions class="action-buttons">
+    <button mat-stroked-button [mat-dialog-close]="true" color="warn" >Cancel</button>
+    <button mat-raised-button (click)="action(data.actionButton)" [mat-dialog-close]="true" color="primary">{{data.actionButton}}</button>
 </div>
 
 

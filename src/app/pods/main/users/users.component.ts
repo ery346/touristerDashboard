@@ -18,15 +18,15 @@ export class UsersComponent implements OnInit {
     // this.usersS.getProvider('42').subscribe((res:any) => console.log(res))
   
     
-    this.authService.getIdTokenClaims().subscribe((res:any) => {
-      let idToken;
-      idToken = res.__raw
+    // this.authService.getIdTokenClaims().subscribe((res:any) => {
+    //   let idToken;
+    //   idToken = res.__raw
       
-      // contienen los mismos datos y solo tienen get 
-      // this.usersS.getAdminCustomers(idToken).subscribe((res:any) => console.log(res));
+    //   // contienen los mismos datos y solo tienen get 
+    //   // this.usersS.getAdminCustomers(idToken).subscribe((res:any) => console.log(res));
      
-      this.usersS.getAdminProvider(idToken).subscribe((res:any) => this.data = res)
-    })
+    //   this.usersS.getAdminProvider(idToken).subscribe((res:any) => this.data = res)
+    // })
   }
 
 

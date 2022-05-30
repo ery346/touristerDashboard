@@ -4,11 +4,13 @@ import { MaterialComponentsModule } from './material-components/material-compone
 import { SearchTableComponent } from './components/search-table/search-table.component';
 import { DialogBodyComponentComponent } from './components/dialog-body-component/dialog-body-component.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DialogDeleteComponent } from './components/dialog-delete/dialog-delete.component';
 
 @NgModule({
   declarations: [
     SearchTableComponent,
-    DialogBodyComponentComponent
+    DialogBodyComponentComponent,
+    DialogDeleteComponent
   ],
   imports: [
     CommonModule,

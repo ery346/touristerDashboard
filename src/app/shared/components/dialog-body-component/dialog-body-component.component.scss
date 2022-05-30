@@ -1,10 +1,14 @@
-mat-dialog-content{
-  margin-left: 55px;
+h1{
+  margin-top: 0;
 }
 
 mat-form-field {
-  width: 204px;
+  width: 100%;
 }
-#deleteBtn{
- float: left;
+.action-buttons{
+  float:right;
+  // margin:10px;
+  #deleteBtn{
+    right: 40%;
+   }
 }

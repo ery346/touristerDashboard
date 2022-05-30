@@ -63,6 +63,16 @@ body { margin: 0; font-family: 'Lato', sans-serif; }
 }
 
 .card-container{
-  height: 80vh;
+  max-height: 70vh;
   overflow: auto;
+}
+
+
+
+//CUSTOM
+
+.input-no-padding {
+  .mat-form-field-wrapper {
+    padding: 0 !important;
+  }
 }

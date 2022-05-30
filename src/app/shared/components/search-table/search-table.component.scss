@@ -4,30 +4,39 @@ table {
   }
 
   .mat-form-field {
+    padding: 0;
     font-size: 14px;
-    width: 80%;
+    width: 90%;
   }
   
-  td, th {
-    width: 10%;
-  }
-
   button{
-    left: 5%;
+    left: 1%;
+    height: 50px;
+
   }
 
-  tr:hover{
-    background-color: rgb(232, 233, 233);
+  a{
+    margin: 5px;
+  }
+  // a:hover{
+  //   cursor: pointer;
+  // }
+
+  .flex-input{
+    display: flex;
+    align-items: center;
+  }
+
+  tr.mat-row:hover{
     cursor: pointer;
+    background-color: rgb(210, 210, 210);
   }
-
-
   .flex-spinner{
     display: flex;
     justify-content: center;
     align-items: center;
     mat-spinner {
-      margin-top: 23%;
+      // margin-top: 1%;
       // margin-bottom: 19.5%;
     }
   }
